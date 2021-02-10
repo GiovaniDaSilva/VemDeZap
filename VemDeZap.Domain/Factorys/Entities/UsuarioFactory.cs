@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using VemDeZap.Domain.Entities;
-using VemDeZap.Domain.Interfaces.Entities;
+﻿using VemDeZap.Domain.Entities;
 
 namespace VemDeZap.Domain.Factorys.Entities
 {
