@@ -1,0 +1,21 @@
+
+// Criar o arquivo com as definições das tabelas a serem criadas no banco
+add-Migration CriandoTabelas
+
+	Problemas que obtive ao rodar:
+	==============================
+	 - Utilizando a versão netcoreapp3.1, foi necessário instalar um pacote adicional de nuget, não adicionado no curso.
+		Microsoft.EntityFrameworkCore.Design (3.1.0) Em versão anterior, estava gerando outros erros.
+
+
+
+
+//Cria as tabelas o banco, conforme as definições do arquivo criado
+Update-Database
+
+
+
+*****************************
+Ao executar qualquer um dos comandos acima, esta retornando um erro, mas não impeditivo, conforme abaixo. Até o momento, não identifiquei a solução;
+
+An error occurred while accessing the Microsoft.Extensions.Hosting services. Continuing without the application service provider. Error: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: VemDeZap.Domain.Interfaces.Repositories.IRepositoryUsuario Lifetime: Transient ImplementationType: VemDeZap.Infra.Repositories.RepositoryUsuario': Unable to resolve service for type 'VemDeZap.Infra.Repositories.Base.VemDeZapContext' while attempting to activate 'VemDeZap.Infra.Repositories.RepositoryUsuario'.) (Error while validating the service descriptor 'ServiceType: Swashbuckle.AspNetCore.Swagger.ISwaggerProvider Lifetime: Transient ImplementationType: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator': Failed to compare two elements in the array.) (Error while validating the service descriptor 'ServiceType: Swashbuckle.AspNetCore.SwaggerGen.ISchemaRegistryFactory Lifetime: Transient ImplementationType: Swashbuckle.AspNetCore.SwaggerGen.SchemaRegistryFactory': Failed to compare two elements in the array.)

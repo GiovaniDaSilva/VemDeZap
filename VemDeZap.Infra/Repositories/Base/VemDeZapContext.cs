@@ -26,7 +26,7 @@ namespace VemDeZap.Infra.Repositories.Base
                 optionsBuilder.UseMySql("Server=localhost;Database=VemDeZap;Uid=admin;Pwd=admin;");
             }
         }
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {            
             base.OnModelCreating(modelBuilder);
 
@@ -40,6 +40,8 @@ namespace VemDeZap.Infra.Repositories.Base
             modelBuilder.ApplyConfiguration(new MapUsuario());
             modelBuilder.ApplyConfiguration(new MapGrupo());
             modelBuilder.ApplyConfiguration(new MapContato());
+            modelBuilder.ApplyConfiguration(new MapCampanha());
+            modelBuilder.ApplyConfiguration(new MapEnvio());
             
 
 
