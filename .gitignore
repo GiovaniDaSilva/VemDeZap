@@ -2,3 +2,5 @@
 /VemDeZap.Domain/bin/Debug/netcoreapp3.1
 /VemDeZap.Domain/.vs
 /.vs/VemDeZap/v16
+/VemDeZap.Api/obj
+/.vs/VemDeZap
