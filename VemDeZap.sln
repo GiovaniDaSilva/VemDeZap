@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VemDeZap.Domain", "VemDeZap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VemDeZap.Api", "VemDeZap.Api\VemDeZap.Api.csproj", "{73D343DE-C208-4D51-BA93-E2F4DCC5F11B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VemDeZap.Infra", "VemDeZap.Infra\VemDeZap.Infra.csproj", "{69C62AF1-19D3-4FCA-8FEB-8D7329C3C5B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{73D343DE-C208-4D51-BA93-E2F4DCC5F11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73D343DE-C208-4D51-BA93-E2F4DCC5F11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73D343DE-C208-4D51-BA93-E2F4DCC5F11B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C62AF1-19D3-4FCA-8FEB-8D7329C3C5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C62AF1-19D3-4FCA-8FEB-8D7329C3C5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C62AF1-19D3-4FCA-8FEB-8D7329C3C5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C62AF1-19D3-4FCA-8FEB-8D7329C3C5B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,6 +32,6 @@ namespace VemDeZap.Domain.Interfaces.Repositories.Base
 
         void Remover(TEntidade entidade);
 
-        IEnumerable<TEntidade> AdicionarLista(IEnumerable<TEntidade> entidades);
+        void AdicionarLista(IEnumerable<TEntidade> entidades);
     }
 }

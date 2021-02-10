@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VemDeZap.Domain\VemDeZap.Domain.csproj" />
+    <ProjectReference Include="..\VemDeZap.Infra\VemDeZap.Infra.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,3 +4,6 @@
 /.vs/VemDeZap/v16
 /VemDeZap.Api/obj
 /.vs/VemDeZap
+/VemDeZap.Api/bin/Debug/netcoreapp3.1
+/VemDeZap.Infra/bin/Debug/netcoreapp3.1
+/VemDeZap.Infra/obj
