@@ -67,7 +67,7 @@ namespace VemDeZap.Domain.Commands.Usuario.AdicionarUsuario
 
         private bool RequestEhValido(AdicionarUsuarioRequest request)
         {
-            if (RequestEstaPreenchido(request))
+            if (!RequestEstaPreenchido(request))
             {
                 AddNotification("Request", Strings.Strings.InformeOsDadosDoUsuario);
                 return false;
