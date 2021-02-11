@@ -16,11 +16,13 @@ namespace VemDeZap.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.ConfigureMediaR();
-            services.ConfigureRepositories();
-            services.ConfigureSwagger();
-            //services.ConfigureAuthentication();
-            services.ConfigureMVC();
+
+                services.ConfigureMediatR();
+                services.ConfigureRepositories();
+                services.ConfigureSwagger();
+                services.ConfigureAuthentication();
+                services.ConfigureMVC();
+                  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,16 +35,9 @@ namespace VemDeZap.Api
 
             app.UseRouting();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
-
             //Permitindo requisições usando header, methodos e Origen (Qualquer site)
-            app.UseCors(x => {
+            app.UseCors(x =>
+            {
                 x.AllowAnyHeader();
                 x.AllowAnyMethod();
                 x.AllowAnyOrigin();
@@ -53,11 +48,13 @@ namespace VemDeZap.Api
 
 
             //Cria a documentação da API de forma Automatica
-            //app.UseSwagger();
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndPoint("/swagger/v1/swagger.json", "VemDeZap - v1");
-            //});
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "VemDeZap - v1");
+            });
+
+
         }
     }
 }
