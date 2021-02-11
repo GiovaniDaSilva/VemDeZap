@@ -24,7 +24,7 @@ namespace VemDeZap.Domain.Entities
         private void ValidarGrupo()
         {
             new AddNotifications<Grupo>(this)
-                .IfTrue(x => x.Usuario == null, Strings.Strings.UsuarioNaoInformado)
+                //.IfTrue(x => x.Usuario == null, Strings.Strings.UsuarioNaoInformado)
                 .IfNullOrInvalidLength(x => x.Nome, 3, 150)                                
                 .IfEnumInvalid(x => x.Nicho);
         }

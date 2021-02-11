@@ -9,6 +9,6 @@ namespace VemDeZap.Domain.Commands.Grupo.AdicionarGrupo
     {
         public string Nome { get; set; }
         public Enums.EnumNicho Nicho { get; set; }
-        public Guid IdUsuario { get; set; }
+        public Guid? IdUsuario { get; set; }
     }
 }

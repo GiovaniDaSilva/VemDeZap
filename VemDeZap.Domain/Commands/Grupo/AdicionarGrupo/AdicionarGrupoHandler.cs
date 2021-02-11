@@ -48,7 +48,8 @@ namespace VemDeZap.Domain.Commands.Grupo.AdicionarGrupo
 
         private async Task<Response> RetornarObjetoResponse(Entities.Grupo grupo)
         {
-            var response = new Response(this, grupo);
+            var result = new { id = grupo.Id, Nome = grupo.Nome, Nicho = grupo.Nicho };
+            var response = new Response(this, result);
             return await Task.FromResult(response);
         }
 
@@ -66,7 +67,7 @@ namespace VemDeZap.Domain.Commands.Grupo.AdicionarGrupo
 
         private Entities.Usuario RetornaUsuario(AdicionarGrupoRequest request)
         {
-            var usuario = _repositoryUsuario.ObterPorId(request.IdUsuario);
+            var usuario = _repositoryUsuario.ObterPorId(request.IdUsuario.Value);
 
             if (usuario == null)
             {
