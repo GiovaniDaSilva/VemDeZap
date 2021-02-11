@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +10,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Reflection;
 using VemDeZap.Api.Security;
+using VemDeZap.Domain.Commands.Grupo.AdicionarGrupo;
 using VemDeZap.Domain.Commands.Usuario.AdicionarUsuario;
 using VemDeZap.Domain.Interfaces.Repositories;
 using VemDeZap.Infra.Repositories;
@@ -105,6 +107,7 @@ namespace VemDeZap.Api
             //services.AddScoped(typeof(IPipelineBehavior<,>), typeof(Pipelines.ValidateCommand<,>));
 
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly, typeof(AdicionarUsuarioRequest).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly, typeof(AdicionarGrupoRequest).GetTypeInfo().Assembly);
 
 
         }
@@ -114,8 +117,8 @@ namespace VemDeZap.Api
             services.AddScoped<VemDeZapContext, VemDeZapContext>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IRepositoryUsuario, RepositoryUsuario>();
-
-            //services.AddTransient<IRepositoryGrupo, RespositoryGrupo>();
+            services.AddTransient<IRepositoryGrupo, RepositoryGrupo>();
+                        
         }
 
         public static void ConfigureSwagger(this IServiceCollection services)

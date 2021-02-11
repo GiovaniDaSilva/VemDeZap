@@ -17,12 +17,13 @@ namespace VemDeZap.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
-                services.ConfigureMediatR();
-                services.ConfigureRepositories();
-                services.ConfigureSwagger();
-                services.ConfigureAuthentication();
-                services.ConfigureMVC();
-                  
+            services.ConfigureMediatR();
+            services.ConfigureRepositories();
+            services.ConfigureSwagger();
+            services.ConfigureAuthentication();
+            services.ConfigureMVC();
+            services.AddHttpContextAccessor();
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
