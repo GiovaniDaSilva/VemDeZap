@@ -7,7 +7,9 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using VemDeZap.Domain.Commands.Grupo.AdicionarGrupo;
+using VemDeZap.Domain.Commands.Grupo.AlterarGrupo;
 using VemDeZap.Domain.Commands.Grupo.ListarGrupo;
+using VemDeZap.Domain.Commands.Grupo.RemoverGrupo;
 using VemDeZap.Domain.Commands.Usuario.AutenticarUsuario;
 using VemDeZap.Infra.Repositories.Transactions;
 
@@ -66,6 +68,28 @@ namespace VemDeZap.Api.Controllers
         }
 
 
+        [Authorize]
+        [HttpPut]
+        [Route("api/Grupo/Alterar")]
+        public async Task<IActionResult> Alterar([FromBody] AlterarGrupoRequest request)
+        {
+            try
+            {
+                string usuarioClaims = _httpContextAccessor.HttpContext.User.FindFirst("usuario").Value;
+                AutenticarUsuarioResponse usuarioResponse = JsonConvert.DeserializeObject<AutenticarUsuarioResponse>(usuarioClaims);
+
+                request.IdUsuario = usuarioResponse.Id;
+
+                var response = await _mediator.Send(request, CancellationToken.None);
+                return await ResponseAsync(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
 
         [Authorize]
         [HttpDelete]
@@ -74,9 +98,9 @@ namespace VemDeZap.Api.Controllers
         {
             try
             {
-                //var request = new RemoverGrupoRequest();
-                //var result = await _mediator.Send(Request, CancellationToken.None);
-                return Ok("Entrou no Delete");
+                var request = new RemoverGrupoRequest(id);
+                var result = await _mediator.Send(request, CancellationToken.None);
+                return await ResponseAsync(result);
             }
             catch (Exception ex)
             {

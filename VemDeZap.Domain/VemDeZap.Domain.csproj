@@ -9,4 +9,8 @@
     <PackageReference Include="prmToolkit.NotificationPattern" Version="1.1.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Grupo\RemoverGrupo\Notifications\" />
+  </ItemGroup>
+
 </Project>

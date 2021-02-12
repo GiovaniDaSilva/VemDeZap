@@ -1,4 +1,5 @@
 ﻿using prmToolkit.NotificationPattern;
+using System;
 using VemDeZap.Domain.Enums;
 
 namespace VemDeZap.Domain.Entities
@@ -27,6 +28,12 @@ namespace VemDeZap.Domain.Entities
                 //.IfTrue(x => x.Usuario == null, Strings.Strings.UsuarioNaoInformado)
                 .IfNullOrInvalidLength(x => x.Nome, 3, 150)                                
                 .IfEnumInvalid(x => x.Nicho);
+        }
+
+        internal void AlterarGrupo(string nome, EnumNicho nicho)
+        {
+            this.Nome = nome;
+            this.Nicho = nicho;
         }
     }
 }
